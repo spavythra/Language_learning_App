@@ -15,6 +15,8 @@ let config = {
     multiplestatements: true,
   };
 
+
+
   var connection = mysql.createConnection(config);
   connection.connect();
 
