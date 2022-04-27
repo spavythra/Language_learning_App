@@ -19,7 +19,7 @@ const main = async () => {
         .then(console.log("words"))
       }}>connect </button>
       
-      <h1>{message}</h1>
+      
     </div>
   );
 }
