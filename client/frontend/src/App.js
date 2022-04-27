@@ -38,9 +38,14 @@ function App(){
     getWords();
   }, []);
 
-  const animals = words.map((animal,i)=> <li key={i}>{animal.Eng_word}- {animal.Fin_word}</li>)
+  const animals = words.map((animal,i)=> <li key={i}>{animal.Eng_word} - {animal.Fin_word}</li>)
  
-  return(<div>{animals}</div>)
+  return(
+  <div>
+    <div className='header'>Learn Finnish</div>
+    <div className='words'>{animals}</div>
+    
+  </div>)
   
 }
 
