@@ -3,5 +3,33 @@
     font-size: 35px;
 }
 .words {
-    text-align: center;
+    width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+table {
+    border-spacing: 0;
+    border: 1px solid black;
+    width: 800px;
+    height: 200px;
+    
+  }
+
+  tr td :last-child {
+       
+        border-bottom: 0;
+      
+    }
+    
+  th {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+    
+  td {
+    text-align: center;
+    border-bottom: 1px solid rgb(14, 14, 18);
+    border-right: 1px solid black;
+  }
