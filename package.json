@@ -1,6 +1,4 @@
-{"scripts": {
-    "start": "node server.js"
-  },
+{
     "name": "example-app",
     "description": "a really cool app",
     "version": "1.0.0",
@@ -8,4 +6,3 @@
       "node": "16.8.0"
     }
   }
-  
