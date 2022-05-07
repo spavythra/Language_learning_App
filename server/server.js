@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 require("dotenv").config()
+var port = process.env.PORT
 // console.log(process.env)
 // console.log(process.env.USER)
 // console.log(process.env)
@@ -35,6 +36,6 @@ let config = {
 
   
 
-app.listen(8080 , () => {
+app.listen(port , () => {
     console.log("port 8080")
 })
