@@ -1,1 +1,1 @@
-web:node client/frontned/index.js
+web:node server/server.js
