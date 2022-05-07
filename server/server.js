@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 require("dotenv").config()
-var port = process.env.PORT
+var port = process.env.PORT || 8000
 // console.log(process.env)
 // console.log(process.env.USER)
 // console.log(process.env)
