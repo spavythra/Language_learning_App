@@ -21,7 +21,7 @@ let config = {
   var connection = mysql.createConnection(config);
   connection.connect();
 
-  // app.use(express.static("client/frontend/build"));
+  app.use(express.static("client/frontend/build"));
 
   app.get("/words", (req, res) => {
     connection.query("SELECT * from words", (error, results) => {
