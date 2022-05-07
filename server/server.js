@@ -36,5 +36,5 @@ let config = {
   
 
 app.listen(8080 , () => {
-    console.log("server up and running on port 8080")
+    console.log("port 8080")
 })
