@@ -3,6 +3,8 @@ const app = express()
 const mysql = require('mysql')
 require("dotenv").config()
 var port = process.env.PORT || 8000
+
+app.use(express.static("public"));
 // console.log(process.env)
 // console.log(process.env.USER)
 // console.log(process.env)
@@ -19,15 +21,15 @@ let config = {
 
 
   var connection = mysql.createConnection(config);
-  connection.connect();
+  // connection.connect();
 
-  app.use(express.static("client/frontend/build"));
+  
 
   app.get("/words", (req, res) => {
     connection.query("SELECT * from words", (error, results) => {
       if (error) {
         console.log(error);
-        connection.end();
+        // connection.end();
       } else {
         res.send(results);
       }
