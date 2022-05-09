@@ -1,7 +1,14 @@
 const express = require('express')
 const app = express()
-const mysql = require('mysql')
+const mysql = require('mysql') 
+const cors = require('cors')
 require("dotenv").config()
+// const path = require('path');
+
+var port = process.env.PORT || 8000
+
+
+app.use(cors());
 // console.log(process.env)
 // console.log(process.env.USER)
 // console.log(process.env)
@@ -18,23 +25,26 @@ let config = {
 
 
   var connection = mysql.createConnection(config);
-  connection.connect();
+  // connection.connect();
 
-  // app.use(express.static("client/frontend/build"));
-
+  // console.log(process.env.NODE_ENV);
+  
+  // if (process.env.NODE_ENV === "production") {
+    app.use(express.static("public"));
   app.get("/words", (req, res) => {
     connection.query("SELECT * from words", (error, results) => {
       if (error) {
         console.log(error);
-        connection.end();
+        // connection.end();
       } else {
+        // res.sendFile(path.resolve(__dirname,  "public", "index.html"));
         res.send(results);
       }
     });
   });
-
+  // }
   
 
-app.listen(8080 , () => {
-    console.log("server up and running on port 8080")
+app.listen(port , () => {
+    console.log("port 8080")
 })
