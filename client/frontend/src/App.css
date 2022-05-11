@@ -1,6 +1,12 @@
 .header {
     text-align: center;
     font-size: 35px;
+    width: auto;
+    height: 4rem;
+    background-color: rgb(8, 8, 67);
+    color: white;
+    align-items: center;
+    text-align: center;
 }
 .words {
     width: 100%;

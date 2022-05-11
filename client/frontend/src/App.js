@@ -36,7 +36,7 @@ function App(){
  
   return(
   <div>
-    <div className='header'>Learn Finnish</div>
+    <div className='header'>Learning Finnish</div>
     <div className='words'><table><tbody><tr>
           <th>English Word</th>
           <th>Finnish word</th>
