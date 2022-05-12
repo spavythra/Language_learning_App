@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -20px;
 }
 table {
     border-spacing: 0;
