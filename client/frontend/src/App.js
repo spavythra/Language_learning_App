@@ -24,11 +24,8 @@ function App(){
   }, []);
 
   const setNextWord = () => {
-		// const randomIndex = Math.floor(Math.random() * words.length)
-    // console.log(current)
-
-		// setCurrent(current+1)
-    // console.log(current)
+		setCurrent(current+1)
+    console.log(current)
 	}
 
   // changing condition
@@ -68,35 +65,39 @@ setCurrent(current+1)
   return(
   <div>
     <div className='header'>Learning Finnish</div>
-    <p>{streak} / {maxStreak}</p>
     <div>
-				{words.map((word,i) => { if(i===current)
-        return(<p key={i}>{word.Eng_word}</p>)}
-        ) }
-          
-          
-			</div>
-        {/* <div className='words'><table><tbody><tr>
-          <th>English Word</th>
-          <th>Finnish word</th>
-          
-        </tr>{animals}</tbody></table></div> */}
+    <p>{streak} / {maxStreak}</p>
 
-      <div>
-				<form onSubmit={handleSubmit}>
-					<input
-						type="text"
-						onChange={handleChange}
-						value={input}
-						/>
-				</form>
-			</div>
-			{error && 
-				<div>
-					<p>{ error }</p>
-				</div>
-			}
-		</div>
+    { (() => {
+      if(current%2 !== 0){
+        return(<div>
+          {words.map((word,i) => { if(i===current)
+          return(<p key={i}>{word.Eng_word}</p>)}
+          ) }
+            
+            
+        
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={handleChange}
+              value={input}
+              />
+          </form>
+        
+        {error && 
+          <div>
+            <p>{ error }</p>
+          </div>
+        }</div>)
+      } else {
+        return(<div><button onClick={setNextWord}>next</button></div>)
+      }
+    })()}
+    
+    
+      </div>
+	</div>
     
   )
   
