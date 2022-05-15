@@ -64,7 +64,7 @@ const selectImage = () => {
 
   return(
   <div>
-    <div className='header'>Learning Finnish</div>
+    
     <div>
     <p>{streak} / {maxStreak}</p>
 
