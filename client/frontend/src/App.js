@@ -2,25 +2,27 @@ import './App.css';
 import {useState} from 'react';
 import User from './User.js';
 import Admin from './Admin.js';
+import Home from './Home.js';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App(){
 
-  const [view, setView] = useState('Home')
-
   return(
-  <div>
-    <div className='header'>Learning Finnish</div>
+   
+    <Router>
     <nav>
-    <button onClick={()=>setView('User')}>User</button>
-    <button onClick={()=>setView('Admin')}>Admin</button>
+      <Link to="/"> Home </Link>
+      <Link to="/admin"> Admin </Link>
+      <Link to="/user"> User </Link>
     </nav>
-    <div>
-      {/* {view === "Home" && <User/>} */}
-      {view === "User" && <User/>}
-      {view === "Admin" && <Admin/>}
-    </div>
-
-	</div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/user" element={<User />} />
+     
+    </Routes>
+  </Router>
+ 
     
   )
   
