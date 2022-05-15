@@ -7,13 +7,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App(){
 
-  return(
+  return(<>
+    <div className='header'>Learning Finnish</div>
    
     <Router>
     <nav>
-      <Link to="/"> Home </Link>
-      <Link to="/admin"> Admin </Link>
-      <Link to="/user"> User </Link>
+      <button><Link to="/">Home </Link></button>
+      {/* <Link to="/admin"> Admin </Link>
+      <Link to="/user"> User </Link> */}
     </nav>
     <Routes>
       <Route path="/" element={<Home />} />
@@ -24,7 +25,7 @@ function App(){
   </Router>
  
     
-  )
+  </> )
   
 }
 
