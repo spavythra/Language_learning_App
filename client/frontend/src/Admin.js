@@ -2,7 +2,13 @@ import React from 'react'
 
 function Admin() {
   return (
-    <div>Admin</div>
+    <div>
+      <label>English word</label>
+      <input type="text"/>
+      <label>Finnish word</label>
+      <input type="text"/>
+      <button>Add</button>
+    </div>
   )
 }
 

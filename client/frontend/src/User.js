@@ -69,7 +69,7 @@ const selectImage = () => {
     <p>{streak} / {maxStreak}</p>
 
     { (() => {
-      if(current%2 !== 0){
+      
         return(<div>
           {words.map((word,i) => { if(i===current)
           return(<p key={i}>{word.Eng_word}</p>)}
@@ -90,9 +90,7 @@ const selectImage = () => {
             <p>{ error }</p>
           </div>
         }</div>)
-      } else {
-        return(<div><button onClick={setNextWord}>next</button></div>)
-      }
+      
     })()}
     
     
