@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import Axios from "axios";
 
-function Admin() {
+function AddWord() {
   const [Eng_word, setEng_word] = useState('')
   const [Fin_word, setFin_word] = useState('')
 
@@ -38,4 +38,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default AddWord

@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql') 
 const cors = require('cors')
+const Connection = require('mysql/lib/Connection')
 require("dotenv").config()
 // const path = require('path');
 
@@ -10,10 +11,7 @@ var port = process.env.PORT || 8000
 
 app.use(cors());
 app.use(express.json());
-// console.log(process.env)
-// console.log(process.env.USER)
-// console.log(process.env)
-// console.log(process.env.USERNAME)
+
 
 let config = {
     host: process.env.HOST,
@@ -55,6 +53,21 @@ let config = {
       }
     });
   });
+
+  app.put("/admin/update", (req,res) => {
+    const id = req.body.id;
+    const Fin_word = req.body.Fin_word;
+
+    connection.query("UPDATE words SET Fin_word = ? WHERE id = ?", 
+    [Fin_word,id],
+    (err, result) => {
+      if(err) {
+        console.log(err)
+      } else {
+        res.send(result)
+      }
+    })
+  })
  
   
 
