@@ -9,6 +9,7 @@ var port = process.env.PORT || 8000
 
 
 app.use(cors());
+app.use(express.json());
 // console.log(process.env)
 // console.log(process.env.USER)
 // console.log(process.env)
@@ -25,12 +26,24 @@ let config = {
 
 
   var connection = mysql.createConnection(config);
-  // connection.connect();
-
-  // console.log(process.env.NODE_ENV);
   
-  // if (process.env.NODE_ENV === "production") {
-    app.use(express.static("public"));
+  app.use(express.static("public"));
+
+  app.post("/admin/add", (req,res) => {
+    console.log(req.body)
+  const Eng_word = req.body.Eng_word;
+  const Fin_word = req.body.Fin_word;
+
+    connection.query("INSERT INTO words (Eng_word,Fin_word) VALUES (?,?)",
+    [Eng_word, Fin_word], (err,result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values Inserted");
+      }
+    })
+  })
+
   app.get("/words", (req, res) => {
     connection.query("SELECT * from words", (error, results) => {
       if (error) {
@@ -42,7 +55,7 @@ let config = {
       }
     });
   });
-  // }
+ 
   
 
 app.listen(port , () => {
