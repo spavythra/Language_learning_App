@@ -68,6 +68,17 @@ let config = {
       }
     })
   })
+
+  app.delete("/admin/delete/:id", (req, res) => {
+    const id = req.params.id;
+    connection.query("DELETE FROM words WHERE id = ?", id, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });
  
   
 

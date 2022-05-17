@@ -41,10 +41,6 @@ function UpdateWord() {
       }
     );
     }
-    console.log(wordList)
-
-
-
     
         return (
         <div>
@@ -70,6 +66,7 @@ function UpdateWord() {
                   }}
                 > Update
                 </button>
+                
                 </div>
                         </div>)
                     
