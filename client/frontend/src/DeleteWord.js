@@ -38,8 +38,8 @@ function DeleteWord() {
 
     
         return (
-        <div>delete
-            {/* <div>
+        <div>
+            <div>
             { (() => {
                 return(<div>
                     {wordList.map((val,i) => {
@@ -65,7 +65,7 @@ function DeleteWord() {
                 </div>)
            
     })()}
-    </div> */}
+    </div>
              
         </div>
           )
