@@ -17,14 +17,28 @@ function User(){
       let data = await hr.json()
       console.log(data)
       setWords(data);
-      setStreak(parseInt(localStorage.getItem('streak')) || 0)
-		setMaxStreak(parseInt(localStorage.getItem('maxStreak')) || 0)
+    //   setStreak(parseInt(localStorage.getItem('streak')) || 0)
+		// setMaxStreak(parseInt(localStorage.getItem('maxStreak')) || 0)
     }
     getWords();
   }, []);
 
-  const setNextWord = () => {
-		setCurrent(current+1)
+  const NextWord = () => {if(current< (words.length-1)){
+    setCurrent(current+1)
+    
+  } else {
+    return(alert("done"))
+    console.log("Limit exceeded")
+  }
+		
+	}
+
+  const BackWord = () => {if(current> 0){
+    setCurrent(current-1)
+  } else {
+    <p>Limit exceeded</p>
+  }
+		
 	}
 
   // changing condition
@@ -39,8 +53,9 @@ console.log(input.toLocaleLowerCase())
 console.log(words[current].Fin_word.toLocaleLowerCase())
 if(input.toLocaleLowerCase() === words[current].Fin_word.toLocaleLowerCase()){
   setStreak(streak + 1)
-  setMaxStreak(streak + 1 > maxStreak ? streak + 1 : maxStreak)
+  // setMaxStreak(streak + 1 > maxStreak ? streak + 1 : maxStreak)
   setError(false)
+  setMaxStreak(current+1)
 
   localStorage.setItem('streak', streak + 1)
   localStorage.setItem('maxStreak', streak + 1 > maxStreak ? streak + 1 : maxStreak)
@@ -48,13 +63,16 @@ if(input.toLocaleLowerCase() === words[current].Fin_word.toLocaleLowerCase()){
   const h = words[current].Eng_word
   const r = words[current].Fin_word
   setError(`Wrong! The correct answer for ${h} is ${r}`)
-  setStreak(0)
-  localStorage.setItem('streak', 0)
+  setMaxStreak(current+1)
+  // setStreak(0)
+  // localStorage.setItem('streak', 0)
 }
 
 setInput('')
 setCurrent(current+1)
 }
+
+// console.log(words.length)
 
 const selectImage = () => {
 
@@ -69,21 +87,21 @@ const selectImage = () => {
     <p>{streak} / {maxStreak}</p>
 
     { (() => {
-      
+     
         return(<div>
           {words.map((word,i) => { if(i===current)
           return(<p key={i}>{word.Eng_word}</p>)}
           ) }
-            
-            
         
-          <form onSubmit={handleSubmit}>
+          <form >
             <input
               type="text"
               onChange={handleChange}
               value={input}
               />
           </form>
+          <button onClick={handleSubmit}>Check</button>
+          <button onClick={NextWord}>Next</button>
         
         {error && 
           <div>
