@@ -16,20 +16,47 @@
   align-items: center;
   margin-top: -20px;
 }
-img {
-  width:150px;
-  height: 150px;
-  margin:30px;
-  padding: 20px;
- }
-.btn{
-  margin: 15px;
-  padding: 5px;
- }
- 
- [type=radio] {
-  margin:0;padding:0;
-  -webkit-appearance:none;
-     -moz-appearance:none;
-          appearance:none;
- }
+ /* Container needed to position the button. Adjust the width as needed */
+ .container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: black;
+} 
+
+.home {
+  text-align: center;
+}
+.home_items {
+  display: flex;
+}
+.home_items img{
+  width: 100%;
+  height: 80%;
+  margin-top: 70px;
+  justify-content: space-evenly;
+}

@@ -6,45 +6,29 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useNavigate} from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { margin } from '@mui/system';
-import admin from './img/admin.jpg'
+import teacher from './img/teacher.webp';
+import student from './img/student.webp'
 
 
 function Home() {
 
   return(
   <div>
-    <Container maxWidth="sm">
-    <h2> Choose Type </h2>
-    <div className='row'>
-    <nav>
-    <div className='col-md-6'>
-<div className='card'>
-<img src={admin} className='card-img-top'/>
-<div className='card-body'>
-<button className='btn btn-outline-primary'>Admin</button>
-</div>
-</div>
-</div>
-<div className='col-md-6'>
-<div className='card'>
-<img/>
-<div className='card-body'>
-<button className='btn btn-outline-primary'>Admin</button>
-</div>
-</div>
-</div>
-      
-      {/* <div className='col-md-4' style={{padding: "15px", border: "1px solid #f2f2f2"}}>
-    <button className='btn btn-outline-primary'><Link to="/admin"> Admin </Link>
-      </button></div><div className='col-md-4' style={{padding: "15px", border: "1px solid #f2f2f2"}}>
-    <button className='btn btn-outline-success'><Link to="/user"> User </Link></button></div> */}
-    </nav>
+    {/* <Container maxWidth="sm"> */}
+    <h2 className='home'> Choose Type </h2><nav>
+    <div className='home_items'>
+    
+    <div className="container">
+      <img src={teacher} alt="Snow"/>
+      <button className="btn"><Link to='/admin' style={{text_decoration:'none',color:'white'}}>Admin</Link></button>
+    </div> 
+    <div className="container">
+      <img src={student} alt="Snow"/>
+      <button className="btn"><Link to='/user' style={{text_decoration:'none',color:'white'}}>User</Link></button>
+    </div> 
+    
     </div>
-    {/* <div>
-      {view === "User" && <User/>}
-      {view === "Admin" && <Admin/>}
-    </div> */}
-    </Container>
+    </nav>
 	</div>
     
   )
