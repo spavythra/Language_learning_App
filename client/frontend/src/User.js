@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { handleScoreChange } from "../src/redux/actions.js";
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 function User(){
 
@@ -90,25 +92,18 @@ setCurrent(current+1)
 
 }
 
-// console.log(words.length)
-
-const selectImage = () => {
-
-}
-
-
-
   return(
-  <div>
+  <Box>
+    <Typography variant="h2" mt={15}>Questions {current + 1}</Typography>
     
     <div>
-    <p>{score} / {words.length}</p>
-
+    <Box mt={5}>Score: {score} / {words.length}</Box>
+    
     { (() => {
      
         return(<div>
           {words.map((word,i) => { if(i===current)
-          return(<p key={i}>{word.Eng_word}</p>)}
+          return(<Typography variant='h3' mt={5} mb={5} key={i}>Write the correct Finnish word for - {word.Eng_word}</Typography>)}
           ) }
         
           <form >
@@ -116,10 +111,12 @@ const selectImage = () => {
               type="text"
               onChange={handleChange}
               value={input}
+              placeholder="type"
+              style={{border:'none', alignItems: 'center'}}
               />
           </form>
-          <button onClick={handleSubmit}>Check</button>
-          <button onClick={NextWord}>Next</button>
+          <button style={{marginTop:"10px", alignItems: 'center', justifyContent:'center',display:'flex'}}  onClick={handleSubmit} type="button" className="btn btn-primary">submit</button>
+          {/* <button onClick={NextWord}>Next</button> */}
         
         {error && 
           <div>
@@ -131,7 +128,7 @@ const selectImage = () => {
     
     
       </div>
-	</div>
+	</Box>
     
   )
   
