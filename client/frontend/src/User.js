@@ -1,7 +1,9 @@
 import './App.css';
 import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 function User(){
+
     let [words, setWords] = useState([])
     const [input, setInput] = useState('')
 	const [current, setCurrent] = useState(0)
@@ -27,8 +29,9 @@ function User(){
     setCurrent(current+1)
     
   } else {
+    <Link to="/score">  </Link>
     return(alert("done"))
-    console.log("Limit exceeded")
+    // console.log("Limit exceeded")
   }
 		
 	}

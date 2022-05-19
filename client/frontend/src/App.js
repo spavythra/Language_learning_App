@@ -7,6 +7,7 @@ import AddWord from "./AddWord.js";
 import DeleteWord from "./DeleteWord.js";
 import UpdateWord from "./UpdateWord.js";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import TotalScore from './TotalScore.js';
 
 function App(){
 
@@ -26,6 +27,7 @@ function App(){
       <Route path="/admin/add" element={<AddWord />} />
       <Route path="/admin/delete" element={<DeleteWord />} />
       <Route path="/admin/update" element={<UpdateWord />} />
+      <Route path="/score" element={<TotalScore />} />
      
     </Routes>
   </Router>
