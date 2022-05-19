@@ -16,27 +16,20 @@
   align-items: center;
   margin-top: -20px;
 }
-table {
-    border-spacing: 0;
-    border: 1px solid black;
-    width: 800px;
-    height: 200px;
-    
-  }
-
-  tr td :last-child {
-       
-        border-bottom: 0;
-      
-    }
-    
-  th {
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-  }
-    
-  td {
-    text-align: center;
-    border-bottom: 1px solid rgb(14, 14, 18);
-    border-right: 1px solid black;
-  }
+img {
+  width:150px;
+  height: 150px;
+  margin:30px;
+  padding: 20px;
+ }
+.btn{
+  margin: 15px;
+  padding: 5px;
+ }
+ 
+ [type=radio] {
+  margin:0;padding:0;
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
+ }
