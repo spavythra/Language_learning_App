@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import { handleScoreChange } from "../src/redux/actions.js"
+import { handleScoreChange } from "../src/redux/actions.js";
 
 function User(){
 
@@ -60,28 +60,34 @@ setInput(event.target.value)
 
 //submit function
 const handleSubmit = (event) => {
-event.preventDefault()
-console.log(input.toLocaleLowerCase())
-console.log(words[current].Fin_word.toLocaleLowerCase())
+  if(current< (words.length-1)) {
+//     event.preventDefault()
+// console.log(input.toLocaleLowerCase())
+// console.log(words[current].Fin_word.toLocaleLowerCase())
 if(input.toLocaleLowerCase() === words[current].Fin_word.toLocaleLowerCase()){
-  setStreak(streak + 1)
-  // setMaxStreak(streak + 1 > maxStreak ? streak + 1 : maxStreak)
-  setError(false)
-  setMaxStreak(current+1)
+  dispatch(handleScoreChange(score+1));
+  // setStreak(streak + 1)
+  // setError(false)
+  // setMaxStreak(current+1)
 
-  localStorage.setItem('streak', streak + 1)
-  localStorage.setItem('maxStreak', streak + 1 > maxStreak ? streak + 1 : maxStreak)
+  // localStorage.setItem('streak', streak + 1)
+  // localStorage.setItem('maxStreak', streak + 1 > maxStreak ? streak + 1 : maxStreak)
 } else {
   const h = words[current].Eng_word
   const r = words[current].Fin_word
   setError(`Wrong! The correct answer for ${h} is ${r}`)
-  setMaxStreak(current+1)
+  // setMaxStreak(current+1)
   // setStreak(0)
   // localStorage.setItem('streak', 0)
 }
 
 setInput('')
 setCurrent(current+1)
+
+  } else {
+    navigate("/score");
+  }
+
 }
 
 // console.log(words.length)
@@ -96,7 +102,7 @@ const selectImage = () => {
   <div>
     
     <div>
-    <p>{streak} / {maxStreak}</p>
+    <p>{score} / {words.length}</p>
 
     { (() => {
      
