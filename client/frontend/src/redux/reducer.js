@@ -1,6 +1,6 @@
 import {
     CHANGE_SCORE,
-} from "./actionsTypes";
+} from "./actionsTypes.js";
 
 const initialState = {
     score: 0,

@@ -1,8 +1,18 @@
 import './App.css';
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import { handleScoreChange } from "../src/redux/actions.js"
 
 function User(){
+
+  const {
+    score,
+  } = useSelector((state) => state);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
     let [words, setWords] = useState([])
     const [input, setInput] = useState('')
@@ -29,8 +39,7 @@ function User(){
     setCurrent(current+1)
     
   } else {
-    <Link to="/score">  </Link>
-    return(alert("done"))
+    navigate("/score");
     // console.log("Limit exceeded")
   }
 		
