@@ -20,3 +20,14 @@ https://mui.com/material-ui/api/container/
 
 //mui icons
 npm install @mui/icons-material
+
+Home page:
+![image](https://user-images.githubusercontent.com/87486009/169625178-f1f515c3-4244-4fa2-bde5-9cd40e552b44.png)
+
+Admin Page:
+![image](https://user-images.githubusercontent.com/87486009/169625257-7228390b-3ca5-4f34-a0f9-015bc9187cfc.png)
+
+User Page:
+![image](https://user-images.githubusercontent.com/87486009/169625280-01aedc10-3ff3-4502-bf6c-25235ec9ac52.png)
+
+
