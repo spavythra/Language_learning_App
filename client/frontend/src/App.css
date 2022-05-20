@@ -124,7 +124,7 @@ input {
 }
 
 .deleteword {
-  width: 700px;
+  width: 500px;
   height: auto;
   border: 1px solid black;
   margin: 10px;
@@ -135,13 +135,14 @@ input {
   padding: 10px;
 }
 
-.deleteword h3 {
+.deleteword h4 {
   margin: 20px;
   align-items: center;
   justify-content: center;
   display: flex;
-
+  font-size: 20px;
 }
+
 
 .deleteword button {
   align-items: center;
@@ -156,4 +157,29 @@ input {
   /* background:#ffffff; */
   margin-right:4px;
   border-radius: 5px;
+}
+.updatewords {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.updateword {
+  width: 500px;
+  height: auto;
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.updateword h4 {
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
 }

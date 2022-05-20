@@ -12,28 +12,35 @@ function AddWord() {
   const [Fin_word, setFin_word] = useState('')
 
   const [wordList, setWordList] = useState([]);
+  const [msg, setMsg] = useState(false)
 
   const addWord = () => {
-    Axios.post("/admin/add", {
-      Eng_word: Eng_word,
-      Fin_word: Fin_word,
-    }).then(() => {
-      setWordList([
-        ...wordList,
-        {
-          Eng_word: Eng_word,
-          Fin_word: Fin_word,
-        },
-      ]);
-    });
+    if((Eng_word && Fin_word ) != ""){
+      Axios.post("/admin/add", {
+        Eng_word: Eng_word,
+        Fin_word: Fin_word,
+      }).then(() => {
+        setWordList([
+          ...wordList,
+          {
+            Eng_word: Eng_word,
+            Fin_word: Fin_word,
+          },
+        ]);
+      });
+      setMsg("Your new word-pair is added successfully!")
+    }
+    else{
+      setMsg("Error! Missing input field.")
+    }
   };
 
   return (
     <div className='addword'>
-      <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column' , border: 1,p:8, background:"#D2D2D2"  }} mt={8}>
+      <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column' , border: 1,p:8, background:"#EFEDED"  }} mt={8}>
       <div className="information">
         <Box sx={{justifyContent: 'center',alignItems: 'center', display: 'flex'}}>
-        <h2 style={{marginBottom:'60px', fontWeight:'bold'}}>Add the new words here!!!</h2></Box>
+        <h2 style={{marginBottom:'60px', fontWeight:'bold', color:'green'}}>Add new words to module</h2></Box>
       <label>English word</label>
       <input type="text" style={{marginBottom:'40px'}} placeholder='Type a english word here..' onChange={(event) => {
             setEng_word(event.target.value);
@@ -54,14 +61,14 @@ function AddWord() {
               HOME
               </Link>
 
-              {/* <a
-              href='/'
-              variant="contained" style={{margin: '10 auto', display: "flex", flexDirection:'row', fontSize:'1.5rem', width:'50%', borderRadius:'25px', fontWeight:'bold'}} >
-              <span className="glyphicon btn-del-glyphicon glyphicon-home img-fluid text-white"></span>
-              Home
-              </a> */}
+           
       </div>
       </div>
+      {msg && 
+          <div>
+            <h4 style={{color:"red"}}>{ msg }</h4>
+          </div>
+        }
       </Box>
       
     </div>

@@ -68,7 +68,7 @@ const handleSubmit = (event) => {
   } else {
     const h = words[current].Eng_word
     const r = words[current].Fin_word
-    setError(`Wrong! The correct answer for ${h} is ${r}`)
+    setError(`Wrong! Correct answer for "${h}" is "${r}"`)
   
   }
   if(current< (words.length-1)) {
@@ -83,18 +83,18 @@ const handleSubmit = (event) => {
 }
 
   return(
-  <Box>
-    <Typography variant="h2" align='center' mt={15}>Questions {current + 1}</Typography>
+  <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column' , border: 1,p:10, background:"white" , width:'600px' }} mt={15}>
+    <Typography variant="h2" align='center' fontFamily='"Roboto","Helvetica","Arial","sans-serif"' >Questions {current + 1}</Typography>
     
     <div>
-    <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex', color: 'green' ,fontSize:'20px' }} >Score: {score} / {words.length}</Box>
+    <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex', color: '#E57A5D' ,fontSize:'20px', fontWeight:'bold' }} >Score: {score} / {words.length}</Box>
     
     { (() => {
      
         return(<div><Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column'  }} mt={2}>
           {words.map((word,i) => { if(i===current)
-          return(<div><h2 style={{ alignItems: 'center', justifyContent:'center',display:'flex'}}>Write the correct Finnish word below</h2>
-          <h2 style={{ alignItems: 'center', justifyContent:'center',display:'flex',fontWeight:'bold',color:'green'}}  key={i}> {word.Eng_word}</h2></div>)}
+          return(<div><h3 style={{ alignItems: 'center', justifyContent:'center',display:'flex'}}>Write the correct Finnish word below</h3>
+          <h2 style={{ alignItems: 'center', justifyContent:'center',display:'flex',fontWeight:'bold',color:'#1976d2', marginBottom:'20px', marginTop:'40px'}}  key={i}> {word.Eng_word}</h2></div>)}
           ) }
         
           <form >
@@ -103,12 +103,16 @@ const handleSubmit = (event) => {
               onChange={handleChange}
               value={input}
               placeholder="Type your answer here..."
-              style={{border:'none', alignItems: 'center', justifyContent:'center',display:'flex'}}
+              style={{ alignItems: 'center', justifyContent:'center',display:'flex', width:'250px'}}
               />
           </form>
           
-          <button style={{marginTop:"10px", alignItems: 'center', justifyContent:'center',display:'flex'}}  onClick={handleSubmit} type="button" className="btn btn-primary">submit</button>
-          {/* <button onClick={NextWord}>Next</button> */}
+          <Button
+                  onClick={handleSubmit}
+                  variant="contained" style={{margin: '0 auto', display: "flex", flexDirection:'row', fontSize:'1.5rem', marginBottom:'15px',marginTop:'25px'}} >
+                  <span className="glyphicon btn-del-glyphicon glyphicon-ok img-fluid text-white"></span>
+                  Submit
+                </Button>
         
         {error && 
           <div>

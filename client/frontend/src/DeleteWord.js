@@ -39,15 +39,15 @@ function DeleteWord() {
                     {wordList.map((val,i) => {
                         return(<div key={i} className='deleteword'>
                             <div >
-                <h3 >English word: {val.Eng_word}</h3>
-                <h3 >Finnish word: {val.Fin_word}</h3>
+                <h4 >English word: {val.Eng_word}</h4>
+                <h4 >Finnish word: {val.Fin_word}</h4>
                 </div>
                 
                 <Button
                   onClick={() => {
                     deleteEmployee(val.id);
                   }}
-                  variant="contained" style={{margin: '0 auto', display: "flex", flexDirection:'row', fontSize:'1.5rem'}} >
+                  variant="contained" style={{margin: '0 auto', display: "flex", flexDirection:'row', fontSize:'1.5rem', marginBottom:'15px',marginTop:'15px'}} >
                   <span className="glyphicon btn-del-glyphicon glyphicon-trash img-fluid text-white"></span>
                   Delete
                 </Button>
