@@ -1,13 +1,10 @@
 import React from 'react'
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import { Button, Typography } from "@mui/material";
-import {DeleteIcon} from '@mui/icons-material'
+import { Button } from "@mui/material";
 
 function DeleteWord() {
     const [wordList, setWordList] = useState([]);
-
-    const [newWord, setNewWord] = useState('')
 
     useEffect(()=>{
         async function getWords(){
@@ -22,7 +19,7 @@ function DeleteWord() {
         Axios.delete(`/admin/delete/${id}`).then((response) => {
             setWordList(
                 wordList.filter((val) => {
-              return val.id != id;
+              return val.id !== id;
             })
           );
         });
@@ -51,23 +48,22 @@ function DeleteWord() {
                   <span className="glyphicon btn-del-glyphicon glyphicon-trash img-fluid text-white"></span>
                   Delete
                 </Button>
-                
-                
-                
-                        </div>)
-                    
-                 })
-        }
+
                 </div>)
+                    
+                })
+        }
+        </div>)
            
-    })()}
+    }
+    )()}
     </div>
     <a className="btn icon-btn btn-success" href="/">
       <span className="glyphicon btn-glyphicon glyphicon-step-backward img-circle text-success"></span>
       Go Home
       </a>
         </div>
-          )
+      )
 }
 
 export default DeleteWord

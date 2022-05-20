@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
 function UpdateWord() {
     const [wordList, setWordList] = useState([]);
@@ -22,7 +22,7 @@ function UpdateWord() {
       (response) => {
         setWordList(
             wordList.map((val) => {
-            return val.id == id
+            return val.id === id
               ? {
                   id: val.id,
                   Eng_word: val.Eng_word,
@@ -66,11 +66,11 @@ function UpdateWord() {
                 </Button>
                 
                 </div>
-                        </div>)
-                    
-                 })
-        }
                 </div>)
+                    
+                })
+              }
+              </div>)
            
     })()}
     </div>
@@ -79,11 +79,8 @@ function UpdateWord() {
       Go Home
       </a>
         </div>
-          )
-   
+      )
 
-
-    
 }
 
 export default UpdateWord

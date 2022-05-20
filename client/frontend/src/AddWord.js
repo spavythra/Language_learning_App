@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState } from "react";
 import Axios from "axios";
-import { Button, Typography } from "@mui/material";
-import Home from "./Home.js"
+import { Button } from "@mui/material";
 import { Box } from "@mui/system";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function AddWord() {
@@ -15,7 +14,8 @@ function AddWord() {
   const [msg, setMsg] = useState(false)
 
   const addWord = () => {
-    if((Eng_word && Fin_word ) != ""){
+      // check empty field before adding
+    if((Eng_word && Fin_word ) !== ""){
       Axios.post("/admin/add", {
         Eng_word: Eng_word,
         Fin_word: Fin_word,
@@ -34,6 +34,8 @@ function AddWord() {
       setMsg("Error! Missing input field.")
     }
   };
+
+// styling for add word-pair page and error messages
 
   return (
     <div className='addword'>
@@ -60,10 +62,9 @@ function AddWord() {
               <span className="glyphicon btn-del-glyphicon glyphicon-home img-fluid text-white"></span>
               HOME
               </Link>
-
-           
       </div>
       </div>
+      
       {msg && 
           <div>
             <h4 style={{color:"red"}}>{ msg }</h4>
