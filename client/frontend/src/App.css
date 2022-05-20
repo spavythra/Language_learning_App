@@ -99,11 +99,13 @@ input {
 
 .adminpage {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
-  padding: 20px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  
 }
 .btn-glyphicon {
   padding:8px;

@@ -20,7 +20,7 @@ function App(){
     <Container maxWidth="sm">
     <nav>
     <Typography variant="h2" align='center' mt={10} mb={5} fontWeight="bold">
-    Learning Finnish
+    Finnish Learning App
               </Typography>
       {/* <button><Link to="/">Home </Link></button> */}
       {/* <Link to="/admin"> Admin </Link>
