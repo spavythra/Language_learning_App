@@ -19,7 +19,7 @@ function App(){
     <Router>
     <Container maxWidth="sm">
     <nav>
-    <Typography variant="h2" fontWeight="bold">
+    <Typography variant="h2" align='center' mt={10} mb={5} fontWeight="bold">
     Learning Finnish
               </Typography>
       {/* <button><Link to="/">Home </Link></button> */}

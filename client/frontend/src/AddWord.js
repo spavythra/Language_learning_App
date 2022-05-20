@@ -24,16 +24,19 @@ function AddWord() {
   };
 
   return (
-    <div>
+    <div className='addword'>
+      <div className="information">
+        <h3>Enter the words which you want to add</h3>
       <label>English word</label>
-      <input type="text" onChange={(event) => {
+      <input type="text" placeholder='Type your english word here..' onChange={(event) => {
             setEng_word(event.target.value);
           }}/>
       <label>Finnish word</label>
-      <input type="text" onChange={(event) => {
+      <input type="text" placeholder='Type your finnish word here..' onChange={(event) => {
             setFin_word(event.target.value);
           }}/>
       <button onClick={addWord}>Add</button>
+      </div>
     </div>
   )
 }

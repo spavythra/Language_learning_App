@@ -1,4 +1,4 @@
-.header {
+/* .header {
     text-align: center;
     font-size: 35px;
     width: auto;
@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   margin-top: -20px;
-}
+} */
  /* Container needed to position the button. Adjust the width as needed */
  .container {
   position: relative;
@@ -59,4 +59,40 @@
   height: 80%;
   margin-top: 70px;
   justify-content: space-evenly;
+}
+.addword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* box-sizing: border-box; */
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  
+}
+input {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin: 5px;
+
+}
+
+ button {
+  width: 320px;
+  height: 50px;
+  margin-top: 15px;
+} 
+
+ button:hover {
+  cursor: pointer;
+}
+.information label{
+  font-size: 20px;
 }
