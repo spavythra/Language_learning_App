@@ -7,9 +7,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 function Admin() {
   return(<>
     <nav className='adminpage'>
-    <a className="btn icon-btn btn-success" href="/admin/add"><span className="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+    {/* <a className="btn icon-btn btn-success" href="/admin/add"><span className="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
       Add  
-      </a>
+      </a> */}
+      <Link to='/admin/add' >Add</Link>
       <a className="btn icon-btn btn-info" href="/admin/update">
       <span className="glyphicon btn-glyphicon glyphicon-edit img-circle text-info"></span>
       Update
