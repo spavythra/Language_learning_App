@@ -18,11 +18,12 @@ function TotalScore() {
   };
    
   return (
-    //   <div>Final</div>
-    <Box mt={30}>
-    <Typography variant="h3" fontWeight="bold" mb={3}> Final Score {score} </Typography>
-    <Button onClick={handleBackToSettings} variant="outlined">
-        back to settings!
+    
+    <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column' , border: 1,p:15, background:"black"  }} mt={15}>
+    <Typography variant="h3" fontWeight="bold" color='#F7CB1C' mb={3}> Lesson Completed! </Typography>
+    <Typography variant="h3" fontWeight="bold" color='#F7CB1C' mb={8}> Final Score {score} </Typography>
+    <Button variant="contained" onClick={handleBackToSettings} style={{fontSize:'2rem',fontWeight:'bold'}} >
+        back to Settings!
       </Button>
       </Box>
   )

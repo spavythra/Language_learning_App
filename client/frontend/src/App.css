@@ -140,3 +140,7 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  font-size: 2rem;
+  }
