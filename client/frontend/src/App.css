@@ -84,13 +84,13 @@ input {
 
 }
 
- button {
+.information button {
   width: 320px;
   height: 50px;
   margin-top: 15px;
 } 
 
- button:hover {
+.information button:hover {
   cursor: pointer;
 }
 .information label{
@@ -131,16 +131,29 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 10px;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .deleteword h3 {
   margin: 20px;
   align-items: center;
   justify-content: center;
+  display: flex;
+
 }
 
-.css-sghohy-MuiButtonBase-root-MuiButton-root {
-  font-size: 2rem;
-  }
+.deleteword button {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.btn-del-glyphicon {
+  padding:4px;
+  /* background:#ffffff; */
+  margin-right:4px;
+  border-radius: 5px;
+}

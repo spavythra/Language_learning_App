@@ -1,6 +1,8 @@
 import React from 'react'
 import Axios from "axios";
 import { useState, useEffect } from "react";
+import { Button, Typography } from "@mui/material";
+import {DeleteIcon} from '@mui/icons-material'
 
 function DeleteWord() {
     const [wordList, setWordList] = useState([]);
@@ -39,15 +41,19 @@ function DeleteWord() {
                             <div >
                 <h3 >English word: {val.Eng_word}</h3>
                 <h3 >Finnish word: {val.Fin_word}</h3>
-
-                <button
+                </div>
+                
+                <Button
                   onClick={() => {
                     deleteEmployee(val.id);
                   }}
-                >
+                  variant="contained" style={{margin: '0 auto', display: "flex", flexDirection:'row', fontSize:'1.5rem'}} >
+                  <span className="glyphicon btn-del-glyphicon glyphicon-trash img-fluid text-white"></span>
                   Delete
-                </button>
-                </div>
+                </Button>
+                
+                
+                
                         </div>)
                     
                  })
