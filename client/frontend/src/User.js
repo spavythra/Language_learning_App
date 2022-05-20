@@ -62,29 +62,19 @@ setInput(event.target.value)
 
 //submit function
 const handleSubmit = (event) => {
+  if(input.toLocaleLowerCase() === words[current].Fin_word.toLocaleLowerCase()){
+    dispatch(handleScoreChange(score+1));
+  
+  } else {
+    const h = words[current].Eng_word
+    const r = words[current].Fin_word
+    setError(`Wrong! The correct answer for ${h} is ${r}`)
+  
+  }
   if(current< (words.length-1)) {
-//     event.preventDefault()
-// console.log(input.toLocaleLowerCase())
-// console.log(words[current].Fin_word.toLocaleLowerCase())
-if(input.toLocaleLowerCase() === words[current].Fin_word.toLocaleLowerCase()){
-  dispatch(handleScoreChange(score+1));
-  // setStreak(streak + 1)
-  // setError(false)
-  // setMaxStreak(current+1)
 
-  // localStorage.setItem('streak', streak + 1)
-  // localStorage.setItem('maxStreak', streak + 1 > maxStreak ? streak + 1 : maxStreak)
-} else {
-  const h = words[current].Eng_word
-  const r = words[current].Fin_word
-  setError(`Wrong! The correct answer for ${h} is ${r}`)
-  // setMaxStreak(current+1)
-  // setStreak(0)
-  // localStorage.setItem('streak', 0)
-}
-
-setInput('')
-setCurrent(current+1)
+    setInput('')
+    setCurrent(current+1)
 
   } else {
     navigate("/score");
