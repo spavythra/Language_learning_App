@@ -62,7 +62,10 @@ function DeleteWord() {
            
     })()}
     </div>
-             
+    <a className="btn icon-btn btn-success" href="/">
+      <span className="glyphicon btn-glyphicon glyphicon-step-backward img-circle text-success"></span>
+      Go Back
+      </a>
         </div>
           )
 }
