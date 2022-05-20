@@ -17,6 +17,19 @@
   margin-top: -20px;
 } */
 
+.appsection {
+  height: 10vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+	font-size: 30px;
+	font-family: poppins;
+	color: #fff;
+	letter-spacing: 5px;
+}
+
+
  /* Container needed to position the button. Adjust the width as needed */
  .container {
   position: relative;
@@ -132,6 +145,7 @@ input {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  
 }
 
 .deleteword {

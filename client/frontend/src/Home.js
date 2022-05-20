@@ -1,8 +1,6 @@
 import './App.css';
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
-import teacher from './img/teacher.webp';
-import student from './img/student.webp';
 import { styled } from '@mui/system';
 import {Box} from '@mui/system';
 import {ButtonBase} from '@mui/material';

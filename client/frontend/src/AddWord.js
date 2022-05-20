@@ -58,9 +58,9 @@ function AddWord() {
               <span className="glyphicon btn-del-glyphicon glyphicon-plus img-fluid text-white"></span>
               Add
               </Button>
-              <Link className="btn icon-btn " style={{marginTop:'15px', width:'50%', padding:'12px', backgroundColor:'#1976d2', color:'white',fontWeight:'bold',fontSize:'1.5rem'}} to="/">
+              <Link className="btn icon-btn " style={{marginTop:'15px', width:'50%', padding:'12px', backgroundColor:'#f0ad4e', color:'white',fontWeight:'bold',fontSize:'1.5rem'}} to="/admin">
               <span className="glyphicon btn-del-glyphicon glyphicon-home img-fluid text-white"></span>
-              HOME
+              BACK
               </Link>
       </div>
       </div>

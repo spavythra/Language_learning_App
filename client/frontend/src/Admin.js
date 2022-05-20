@@ -8,17 +8,17 @@ function Admin() {
   return(<div style={{border:'1px ', width:'600px',justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column'}}>
     <nav className='adminpage'>
       
-      <Link className="btn icon-btn btn-success" to='/admin/add' style={{marginTop:'5px', width:'50%', padding:'12px', color:'white',fontWeight:'bold',fontSize:'2rem', marginRight:'10px'}} >
+      <Link className="btn icon-btn btn-success" to='/admin/add' style={{marginTop:'100px', width:'50%', padding:'12px', color:'white',fontWeight:'bold',fontSize:'2rem', marginRight:'10px'}} >
         <span className="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
         Add word
       </Link>
 
-      <Link className="btn icon-btn btn-info" to='/admin/update ' style={{marginTop:'5px', width:'50%', padding:'12px', color:'white',fontWeight:'bold',fontSize:'2rem',marginRight:'10px'}} >
+      <Link className="btn icon-btn btn-info" to='/admin/update ' style={{marginTop:'100px', width:'50%', padding:'12px', color:'white',fontWeight:'bold',fontSize:'2rem',marginRight:'10px'}} >
       <span className="glyphicon btn-glyphicon glyphicon-edit img-circle text-info"></span>
       Update
       </Link>
 
-      <Link className="btn icon-btn btn-danger" to='/admin/delete' style={{marginTop:'5px', width:'50%', padding:'12px', color:'white',fontWeight:'bold',fontSize:'2rem',marginRight:'10px'}}>
+      <Link className="btn icon-btn btn-danger" to='/admin/delete' style={{marginTop:'100px', width:'50%', padding:'12px', color:'white',fontWeight:'bold',fontSize:'2rem',marginRight:'10px'}}>
       <span className="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>
       Delete
       </Link>

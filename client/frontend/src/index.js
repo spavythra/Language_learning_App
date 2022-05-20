@@ -8,11 +8,11 @@ import store from "./redux/store.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <script type="text/jsx">
+  
   <Provider store={store}>
     <App />
     </Provider>
-  /* </script> */
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

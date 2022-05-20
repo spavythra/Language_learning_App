@@ -12,13 +12,18 @@ import { Container, Typography } from "@mui/material";
 function App(){
 
   return(<>
-   
+   {/* routing between pages */}
+   {/* <div class="box-area">
+    <header > <div className='wrapper'><div className='logo'><a>EasyLearn Suomi</a></div> </div></header></div> */}
+    {/* <Typography variant="h2" align='center' mt={5} mb={5} bgcolor={'black'} color={'white'} width={'100%'} height={'60px'} fontWeight="bold">
+    EasyLearn Suomi
+    </Typography> */}
+    <header className='appsection'><a style={{textDecoration:'none', color:'white'}} href='/'>EasyLearn Suomi</a></header>
     <Router>
+    
     <Container maxWidth="sm">
     <nav>
-    <Typography variant="h2" align='center' mt={10} mb={5} fontWeight="bold">
-    EasyLearn Suomi
-    </Typography>
+    
     </nav>
     <Routes>
       <Route path="/" element={<Home />} />

@@ -15,6 +15,7 @@ function DeleteWord() {
         getWords();
       }, []);
     
+      // delete function by id
     const deleteEmployee = (id) => {
         Axios.delete(`/admin/delete/${id}`).then((response) => {
             setWordList(
@@ -31,6 +32,7 @@ function DeleteWord() {
         return (
         <div className='deletewords'>
             <div>
+              {/* returning items from words array */}
             { (() => {
                 return(<div >
                     {wordList.map((val,i) => {
@@ -40,6 +42,7 @@ function DeleteWord() {
                 <h4 >Finnish word: {val.Fin_word}</h4>
                 </div>
                 
+                {/* bootstrap Buttons used */}
                 <Button
                   onClick={() => {
                     deleteEmployee(val.id);
@@ -58,9 +61,9 @@ function DeleteWord() {
     }
     )()}
     </div>
-    <a className="btn icon-btn btn-success" href="/">
-      <span className="glyphicon btn-glyphicon glyphicon-step-backward img-circle text-success"></span>
-      Go Home
+    <a className="btn icon-btn btn-warning" href="/admin" style={{fontWeight:'bold'}}>
+      <span className="glyphicon btn-glyphicon glyphicon-step-backward img-circle text-warning"></span>
+      BACK
       </a>
         </div>
       )
