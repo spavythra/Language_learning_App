@@ -2,6 +2,7 @@ import React from 'react'
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function DeleteWord() {
     const [wordList, setWordList] = useState([]);
@@ -63,7 +64,8 @@ function DeleteWord() {
     </div>
     <a className="btn icon-btn btn-warning" href="/admin" style={{fontWeight:'bold'}}>
       <span className="glyphicon btn-glyphicon glyphicon-step-backward img-circle text-warning"></span>
-      BACK
+      <Link style={{textDecoration:'none', color:'white'}} to="/admin">BACK</Link>
+      
       </a>
         </div>
       )

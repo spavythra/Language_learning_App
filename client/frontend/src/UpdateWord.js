@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function UpdateWord() {
     const [wordList, setWordList] = useState([]);
@@ -74,9 +75,9 @@ function UpdateWord() {
            
     })()}
     </div>
-    <a className="btn icon-btn btn-warning" href="/admin">
+    <a className="btn icon-btn btn-warning">
       <span className="glyphicon btn-glyphicon glyphicon-step-backward img-circle text-warning"></span>
-      BACK
+      <Link style={{textDecoration:'none', color:'white'}} to="/admin">BACK</Link>
       </a>
         </div>
       )
