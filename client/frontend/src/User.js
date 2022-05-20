@@ -84,16 +84,17 @@ const handleSubmit = (event) => {
 
   return(
   <Box>
-    <Typography variant="h2" mt={15}>Questions {current + 1}</Typography>
+    <Typography variant="h2" align='center' mt={15}>Questions {current + 1}</Typography>
     
     <div>
-    <Box mt={5}>Score: {score} / {words.length}</Box>
+    <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex', color: 'green' ,fontSize:'20px' }} >Score: {score} / {words.length}</Box>
     
     { (() => {
      
-        return(<div>
+        return(<div><Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column'  }} mt={2}>
           {words.map((word,i) => { if(i===current)
-          return(<Typography variant='h3' mt={5} mb={5} key={i}>Write the correct Finnish word for - {word.Eng_word}</Typography>)}
+          return(<div><h2 style={{ alignItems: 'center', justifyContent:'center',display:'flex'}}>Write the correct Finnish word below</h2>
+          <h2 style={{ alignItems: 'center', justifyContent:'center',display:'flex',fontWeight:'bold',color:'green'}}  key={i}> {word.Eng_word}</h2></div>)}
           ) }
         
           <form >
@@ -101,18 +102,19 @@ const handleSubmit = (event) => {
               type="text"
               onChange={handleChange}
               value={input}
-              placeholder="type"
-              style={{border:'none', alignItems: 'center'}}
+              placeholder="Type your answer here..."
+              style={{border:'none', alignItems: 'center', justifyContent:'center',display:'flex'}}
               />
           </form>
+          
           <button style={{marginTop:"10px", alignItems: 'center', justifyContent:'center',display:'flex'}}  onClick={handleSubmit} type="button" className="btn btn-primary">submit</button>
           {/* <button onClick={NextWord}>Next</button> */}
         
         {error && 
           <div>
-            <p>{ error }</p>
+            <h4 style={{color:"red"}}>{ error }</h4>
           </div>
-        }</div>)
+        }</Box></div>)
       
     })()}
     
