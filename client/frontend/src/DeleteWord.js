@@ -7,14 +7,6 @@ function DeleteWord() {
 
     const [newWord, setNewWord] = useState('')
 
-    // const getWords = () => {
-    //     Axios.get("/words").then((response) => {
-    //         setWordList(response.data);
-    //     });
-    //   };
-
-    // getWords();
-
     useEffect(()=>{
         async function getWords(){
           let hr = await fetch("/words")
@@ -38,18 +30,16 @@ function DeleteWord() {
 
     
         return (
-        <div>
+        <div className='deletewords'>
             <div>
             { (() => {
-                return(<div>
+                return(<div >
                     {wordList.map((val,i) => {
-                        return(<div key={i}>
+                        return(<div key={i} className='deleteword'>
                             <div >
                 <h3 >English word: {val.Eng_word}</h3>
                 <h3 >Finnish word: {val.Fin_word}</h3>
-           
-                
-                
+
                 <button
                   onClick={() => {
                     deleteEmployee(val.id);
