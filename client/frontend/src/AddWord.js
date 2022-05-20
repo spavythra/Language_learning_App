@@ -3,6 +3,9 @@ import { useState } from "react";
 import Axios from "axios";
 import { Button, Typography } from "@mui/material";
 import Home from "./Home.js"
+import { Box } from "@mui/system";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 function AddWord() {
   const [Eng_word, setEng_word] = useState('')
@@ -27,8 +30,10 @@ function AddWord() {
 
   return (
     <div className='addword'>
+      <Box sx={{ justifyContent: 'center',alignItems: 'center', display: 'flex',flexDirection: 'column' , border: 1,p:8, background:"#D2D2D2"  }} mt={8}>
       <div className="information">
-        <h3 style={{marginBottom:'40px'}}>Add the new words here!!!</h3>
+        <Box sx={{justifyContent: 'center',alignItems: 'center', display: 'flex'}}>
+        <h2 style={{marginBottom:'60px', fontWeight:'bold'}}>Add the new words here!!!</h2></Box>
       <label>English word</label>
       <input type="text" style={{marginBottom:'40px'}} placeholder='Type a english word here..' onChange={(event) => {
             setEng_word(event.target.value);
@@ -44,16 +49,20 @@ function AddWord() {
               <span className="glyphicon btn-del-glyphicon glyphicon-plus img-fluid text-white"></span>
               Add
               </Button>
+              <Link className="btn icon-btn " style={{marginTop:'15px', width:'50%', padding:'12px', backgroundColor:'#1976d2', color:'white',fontWeight:'bold',fontSize:'1.5rem'}} to="/">
+              <span className="glyphicon btn-del-glyphicon glyphicon-home img-fluid text-white"></span>
+              HOME
+              </Link>
 
-              <Button
-              onClick={()=> <Home/>}
+              {/* <a
+              href='/'
               variant="contained" style={{margin: '10 auto', display: "flex", flexDirection:'row', fontSize:'1.5rem', width:'50%', borderRadius:'25px', fontWeight:'bold'}} >
               <span className="glyphicon btn-del-glyphicon glyphicon-home img-fluid text-white"></span>
               Home
-              </Button>
+              </a> */}
       </div>
       </div>
-      
+      </Box>
       
     </div>
   )
