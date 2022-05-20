@@ -10,7 +10,8 @@ function Admin() {
     {/* <a className="btn icon-btn btn-success" href="/admin/add"><span className="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
       Add  
       </a> */}
-      <Link to='/admin/add' >Add</Link>
+      
+      <Link className="btn icon-btn btn-success" to='/admin/add' ><span className="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</Link>
       <a className="btn icon-btn btn-info" href="/admin/update">
       <span className="glyphicon btn-glyphicon glyphicon-edit img-circle text-info"></span>
       Update
