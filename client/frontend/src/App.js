@@ -1,49 +1,45 @@
 import './App.css';
-import {useState, useEffect} from 'react'
+import User from './User.js';
+import Admin from './Admin.js';
+import Home from './Home.js';
+import AddWord from "./AddWord.js";
+import DeleteWord from "./DeleteWord.js";
+import UpdateWord from "./UpdateWord.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TotalScore from './TotalScore.js';
+import { Container, Typography } from "@mui/material";
 
 function App(){
-    let [words, setWords] = useState([])
 
-    let [answer, setAnswer] = useState('')
-
-  useEffect(()=>{
-    async function getWords(){
-      let hr = await fetch("/words")
-      let data = await hr.json()
-      console.log(data)
-      setWords(data);
-    }
-    getWords();
-  }, []);
-
-  const animals = words.map((animal,i)=> <tr key={i}><td>{animal.Eng_word} </td><td> {animal.Fin_word}</td></tr>)
-  // function handleChange(event) {
-  //   // console.log(event.target.value);
-  //   setAnswer(event.target.value);
-  //   console.log(answer);
-  // }
-
-  // function checkAnswer(text){
-  //   if(answer == text){
-  //     console.log("correct")
-  //   } else {
-  //     console.log("wrong")
-  //   }
-  // }
-
-  // const animals = words.map((animal,i)=> <tr key={i}><td>{animal.Eng_word} </td><td><input onChange={handleChange}></input><button onClick={checkAnswer(animal.Fin_word)}>check</button></td></tr>)
-
- 
-  return(
-  <div>
-    <div className='header'>Learn Finnish</div>
-    <div className='words'><table><tbody><tr>
-          <th>English Word</th>
-          <th>Finnish word</th>
-          
-        </tr>{animals}</tbody></table></div>
+  return(<>
+   {/* routing between pages */}
+   {/* <div class="box-area">
+    <header > <div className='wrapper'><div className='logo'><a>EasyLearn Suomi</a></div> </div></header></div> */}
+    {/* <Typography variant="h2" align='center' mt={5} mb={5} bgcolor={'black'} color={'white'} width={'100%'} height={'60px'} fontWeight="bold">
+    EasyLearn Suomi
+    </Typography> */}
+    <header className='appsection'><a style={{textDecoration:'none', color:'white'}} href='/'>EasyLearn Suomi</a></header>
+    <Router>
     
-  </div>)
+    <Container maxWidth="sm">
+    <nav>
+    
+    </nav>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/user" element={<User />} />
+      <Route path="/admin/add" element={<AddWord />} />
+      <Route path="/admin/delete" element={<DeleteWord />} />
+      <Route path="/admin/update" element={<UpdateWord />} />
+      <Route path="/score" element={<TotalScore />} />
+     
+    </Routes>
+    </Container>
+  </Router>
+ 
+    
+  </> )
   
 }
 

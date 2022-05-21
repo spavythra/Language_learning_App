@@ -1,6 +1,12 @@
-.header {
+/* .header {
     text-align: center;
     font-size: 35px;
+    width: auto;
+    height: 4rem;
+    background-color: rgb(8, 8, 67);
+    color: white;
+    align-items: center;
+    text-align: center;
 }
 .words {
     width: 100%;
@@ -8,28 +14,200 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-table {
-    border-spacing: 0;
-    border: 1px solid black;
-    width: 800px;
-    height: 200px;
-    
-  }
+  margin-top: -20px;
+} */
 
-  tr td :last-child {
-       
-        border-bottom: 0;
-      
-    }
-    
-  th {
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-  }
-    
-  td {
-    text-align: center;
-    border-bottom: 1px solid rgb(14, 14, 18);
-    border-right: 1px solid black;
-  }
+.appsection {
+  height: 10vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+	font-size: 30px;
+	font-family: poppins;
+	color: #fff;
+	letter-spacing: 5px;
+  display: flex;
+}
+
+
+ /* Container needed to position the button. Adjust the width as needed */
+ .container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.container .btn:hover {
+  background-color: black;
+} 
+
+.home {
+  text-align: center;
+}
+
+.home_items {
+  display: flex;
+}
+
+.home_items img{
+  width: 100%;
+  height: 80%;
+  margin-top: 70px;
+  justify-content: space-evenly;
+}
+
+.addword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*user input box related formatting*/
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin: 5px;
+}
+
+.information button {
+  width: 320px;
+  height: 50px;
+  margin-top: 15px;
+} 
+
+.information button:hover {
+  cursor: pointer;
+}
+
+.information label{
+  font-size: 20px;
+}
+
+/*Layout of admin page formatting*/
+
+.adminpage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  
+}
+.btn-glyphicon {
+  padding:8px;
+  background:#ffffff;
+  margin-right:4px;
+}
+
+.icon-btn {
+  padding: 10px 24px 12px 11px;
+  border-radius:50px;
+  margin-bottom: 10px;
+}
+
+/*Delete-word page formatting*/
+.deletewords {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  
+}
+
+.deleteword {
+  width: 500px;
+  height: auto;
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.deleteword h4 {
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+}
+
+
+.deleteword button {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.btn-del-glyphicon {
+  padding:4px;
+  margin-right:4px;
+  border-radius: 5px;
+}
+
+/*Update-word page formatting*/
+.updatewords {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.updateword {
+  width: 500px;
+  height: auto;
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.updateword h4 {
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+}
