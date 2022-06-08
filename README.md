@@ -4,23 +4,23 @@ This is a simple finnish language learning app to demonstarte full stack develop
 
 ### Installation 
 #### Router
-npm i react-router-dom@6 
+- npm i react-router-dom@6 
 
 #### Fetch
-npm i axios
+- npm i axios
 
 #### Redux
-npm install redux react-redux
+- npm install redux react-redux
 
 ### Acknowledgements
 #### Bootstrap reference 
-https://www.techirsh.com/2015/05/creating-attractive-rounded-button-with.html
-https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp
-https://mui.com/material-ui/api/container/
-React Router Dom: https://reactrouter.com/web/guides/quick-start
+- https://www.techirsh.com/2015/05/creating-attractive-rounded-button-with.html
+- https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp
+- https://mui.com/material-ui/api/container/
+- React Router Dom: https://reactrouter.com/web/guides/quick-start
 
 #### mui icons
-npm install @mui/icons-material
+- npm install @mui/icons-material
 
 
 ## Deployment
